@@ -365,5 +365,6 @@ FodyWeavers.xsd
 # Unnecessary files for PEHP
 config.cfg
 config_default.cfg
+preferences.cfg
 workshop.txt
 hl2-pehp/
