@@ -4,7 +4,7 @@ A configuration file for Half-Life 2 that enhances the game while retaining the 
 
 INSTALLATION
 ------------
-For now, you'll just have to download the file from Github manually. Make sure the file is placed in `steamapps\common\Half-Life 2\hl2_complete\cfg`
+For now, you'll just have to download the file from Github manually. Make sure the file is placed in: `steamapps\common\Half-Life 2\hl2_complete\cfg`
 
 TWEAKING
 ------
@@ -17,6 +17,16 @@ Just override `autoexec.cfg` while retaining your `preferences.cfg`.
 MISC
 ------
 Right now, the config also includes a keybind called `togglehud`, which will toggle both the HUD as well as your weapon viewmodel for taking clean screenshots. This is bound to `.` by default. You can also type `enhance` in the console to run the preset again, assuming it loaded correctly the first time.
+
+Useful Commands
+---
+- **snd_restart** - "Restart the sound system of the game. It is greatly advised to use this command over stopsound as this command won't break soundscapes, soundscripts, or entity sounds" - V92
+- **toggle_duck** - Toggles crouch, as opposed to `+crouch` which is a hold.
+
+Useful Cvars
+---
+- **r_flashlightlockposition 0** - Cheat. "Lock the flashlight to whatever position it was created at, making it independent of the player. Will delete itself when turned off." - V92 Default: 0
+- **sv_stickysprint 0** - Toggles whether or not sprint is toggled instead of held. Default: 0
 
 CONTACT
 -------
