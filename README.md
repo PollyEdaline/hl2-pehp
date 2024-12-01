@@ -26,16 +26,24 @@ Just override `autoexec.cfg` while retaining your `preferences.cfg`.
 Right now, the config also includes a keybind called `togglehud`, which will toggle both the HUD as well as your weapon viewmodel for taking clean screenshots. This is bound to `.` by default. You can also type `enhance` in the console to run the preset again, assuming it loaded correctly the first time. `[` will re-enable achievements by disabling commentary mode and cheats, then quicksaving and immediately reloading. This will enable cheats again.
 
 ### Fun and Useful Commands
-- **snd_restart** - "Restart the sound system of the game. It is greatly advised to use this command over stopsound as this command won't break soundscapes, soundscripts, or entity sounds" - V92
+- **snd_restart** - Restart the game's sound system. This command is preferred over stopsound as it will actually restart things like soundscapes.
 - **toggle_duck** - Toggles crouch, as opposed to `+crouch` which is a hold.
 - **ai_force_serverside_ragdoll 0** - Toggles serverside ragdolls. This has many interesting effects, the most notable of which is that ragdolls can be interacted with by physics props, entities, and NPCs (but not by the player or other ragdolls). This can often cause undesired behavior, such as enemies suddenly snapping into the air when walking over bodies, so it's not included in the main file.
 - **ent_fire** - can be used in a ton of ways. Either pick an entity whose name you know or use !picker for what you're looking at (this can target invisible entities as well, so it may behave unexpectedly without extra visualization commands). Funny subcommands include delete and ignite.
 - **print_froggy**, **print_sparkles**, **print_sparklyfroggy** - Well? Just try it out for yourself!
 
 ### Useful Cvars
-- **r_flashlightlockposition 0** - Cheat. "Lock the flashlight to whatever position it was created at, making it independent of the player. Will delete itself when turned off." - V92 Default: 0
-- **sv_stickysprint 0** - Toggles whether or not sprint is toggled instead of held. Default: 0
-- **snd_mute_losefocus 0** - Toggles whether or not audio will be muted when focus is lost. Default: 0
+- **r_flashlightlockposition 1** - *Cheat.* "Lock the flashlight to whatever position it was created at, making it independent of the player. Will delete itself when turned off." - V92 Default: 0
+- **sv_stickysprint 1** - Toggles whether or not sprint is toggled instead of held. Default: 0
+- **snd_mute_losefocus 1** - Toggles whether or not audio will be muted when focus is lost. Default: 0
+- **mat_tonemap_algorithm 0** - Restores tonemap to retail Episode One stylized tonemapping. Supposedly, this was changed with the release of Episode Two in order to avoid a bug with the Jalopy's lights. Default: 1
+- **mat_hdr_uncapexposure 1** - Uncaps exposure to match retail Episode One. Default: 0
+- **r_radiosity 4** - Level of radiosity. 4 is the only value not listed in the console description - cool. 2 supposedly looks better, but can rarely cause issues with props that have vertices clipping into map geometry. Default: 4
+
+### Broken Cvars
+- **g_ragdoll_maxcount 256** // Amount of ragdolls that will exist in a map at once. As of Dec 2024, this value does not seem to do anything. Source will become unstable if there are too many ragdolls even on modern hardware, so this is clamped to a relatively sane value. There are few maps in Vanilla HL2 that can even generate this many ragdolls, but this should prevent instability on custom maps. Default: 8
+- **g_ragdoll_important_maxcount 10** // Amount of larger ragdolls that will exist in a map at once, such as Striders. There aren't any vanilla maps that should go over even the default value, so this is largely for community maps. Notably, it seems like an "important" ragdoll is probably something set in Hammer, as this value does not affect larger enemies spawned in testing. I have no idea if this value actually does anything in practice. Default: 2
+- **cl_ragdoll_collide 1** // Toggle whether generated ragdolls collide with each other. Seems to have been broken since Orange Box according to the developer wiki, and currently doesn't function as of Nov 2024. Seems like it can also occasionally cause issues. Default: 0
 
 ## CONTACT
 If you would like to report bugs, make suggestions, or have any other feedback, please feel free to open an issue on GitHub for the time being.
